@@ -1,4 +1,9 @@
 # --- azurerm_capacity_reservation_group ---
+output "capacity_reservation_groups_id" {
+  description = "Map of id values across all capacity_reservation_groups, keyed the same as var.capacity_reservation_groups"
+  value       = module.capacity_reservation_groups.capacity_reservation_groups_id
+}
+
 output "capacity_reservation_groups_location" {
   description = "Map of location values across all capacity_reservation_groups, keyed the same as var.capacity_reservation_groups"
   value       = module.capacity_reservation_groups.capacity_reservation_groups_location
@@ -25,6 +30,11 @@ output "capacity_reservation_groups_zones" {
 }
 
 # --- azurerm_capacity_reservation ---
+output "capacity_reservations_id" {
+  description = "Map of id values across all capacity_reservations, keyed the same as var.capacity_reservations"
+  value       = module.capacity_reservations.capacity_reservations_id
+}
+
 output "capacity_reservations_capacity_reservation_group_id" {
   description = "Map of capacity_reservation_group_id values across all capacity_reservations, keyed the same as var.capacity_reservations"
   value       = module.capacity_reservations.capacity_reservations_capacity_reservation_group_id
