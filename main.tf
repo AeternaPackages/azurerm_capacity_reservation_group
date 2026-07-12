@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.capacity_reservation_groups : {
       for k2, v2 in coalesce(v1.capacity_reservations, {}) :
       "${k1}/${k2}" => merge(v2, {
-        capacity_reservation_group_id = module.capacity_reservation_groups.capacity_reservation_groups["${k1}"].id
+        capacity_reservation_group_id = module.capacity_reservation_groups.capacity_reservation_groups_id["${k1}"]
       })
     }
   ]...)
